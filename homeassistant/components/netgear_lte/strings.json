@@ -18,6 +18,11 @@
     }
   },
   "entity": {
+    "button": {
+      "reboot": {
+        "name": "Reboot"
+      }
+    },
     "binary_sensor": {
       "mobile_connected": {
         "name": "Mobile connected"
@@ -113,6 +118,16 @@
         }
       },
       "name": "Disconnect LTE"
+    },
+    "reboot": {
+      "description": "Asks the modem to restart.",
+      "fields": {
+        "host": {
+          "description": "The modem that should restart.",
+          "name": "[%key:common::config_flow::data::host%]"
+        }
+      },
+      "name": "Reboot"
     },
     "set_option": {
       "description": "Sets options on the modem.",
