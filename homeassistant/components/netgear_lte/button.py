@@ -1,5 +1,7 @@
 """Support for Netgear LTE buttons."""
 
+from typing import override
+
 from homeassistant.components.button import (
     ButtonDeviceClass,
     ButtonEntity,
@@ -36,6 +38,7 @@ async def async_setup_entry(
 class NetgearLTEButton(LTEEntity, ButtonEntity):
     """Netgear LTE button."""
 
+    @override
     async def async_press(self) -> None:
         """Handle button press."""
         await self.coordinator.modem.router_restart()
