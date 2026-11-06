@@ -1676,7 +1676,7 @@ jobs:
         with:
           pattern: coverage-*
       - name: Upload coverage to Codecov
-        if: needs.info.outputs.test_full_suite == 'false'
+        if: needs.info.outputs.test_full_suite == 'false' && secrets.CODECOV_TOKEN != ''
         uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5 # v7.1.1
         with:
           fail_ci_if_error: true
