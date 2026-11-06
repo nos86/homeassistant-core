@@ -29,6 +29,11 @@
         "name": "Wire connected"
       }
     },
+    "button": {
+      "reboot": {
+        "name": "Reboot"
+      }
+    },
     "sensor": {
       "band": {
         "name": "Current band"
@@ -113,6 +118,16 @@
         }
       },
       "name": "Disconnect LTE"
+    },
+    "reboot": {
+      "description": "Asks the modem to restart.",
+      "fields": {
+        "host": {
+          "description": "The modem that should restart.",
+          "name": "[%key:common::config_flow::data::host%]"
+        }
+      },
+      "name": "Reboot"
     },
     "set_option": {
       "description": "Sets options on the modem.",

@@ -1,5 +1,10 @@
 {
   "entity": {
+    "button": {
+      "reboot": {
+        "default": "mdi:restart"
+      }
+    },
     "sensor": {
       "band": {
         "default": "mdi:radio-tower"
@@ -39,6 +44,9 @@
     },
     "disconnect_lte": {
       "service": "mdi:wifi-off"
+    },
+    "reboot": {
+      "service": "mdi:restart"
     },
     "set_option": {
       "service": "mdi:cog"

@@ -22,6 +22,7 @@ SERVICE_DELETE_SMS = "delete_sms"
 SERVICE_SET_OPTION = "set_option"
 SERVICE_CONNECT_LTE = "connect_lte"
 SERVICE_DISCONNECT_LTE = "disconnect_lte"
+SERVICE_REBOOT = "reboot"
 
 DELETE_SMS_SCHEMA = probatio.Schema(
     {
@@ -46,6 +47,7 @@ SET_OPTION_SCHEMA = probatio.Schema(
 CONNECT_LTE_SCHEMA = probatio.Schema({probatio.Optional(ATTR_HOST): cv.string})
 
 DISCONNECT_LTE_SCHEMA = probatio.Schema({probatio.Optional(ATTR_HOST): cv.string})
+REBOOT_SCHEMA = probatio.Schema({probatio.Optional(ATTR_HOST): cv.string})
 
 
 async def _service_handler(call: ServiceCall) -> None:
@@ -76,6 +78,8 @@ async def _service_handler(call: ServiceCall) -> None:
         await modem.connect_lte()
     elif call.service == SERVICE_DISCONNECT_LTE:
         await modem.disconnect_lte()
+    elif call.service == SERVICE_REBOOT:
+        await modem.router_restart()
 
 
 @callback
@@ -87,6 +91,7 @@ def async_setup_services(hass: HomeAssistant) -> None:
         SERVICE_SET_OPTION: SET_OPTION_SCHEMA,
         SERVICE_CONNECT_LTE: CONNECT_LTE_SCHEMA,
         SERVICE_DISCONNECT_LTE: DISCONNECT_LTE_SCHEMA,
+        SERVICE_REBOOT: REBOOT_SCHEMA,
     }
 
     for service, schema in service_schemas.items():

@@ -48,6 +48,7 @@ ALL_BINARY_SENSORS = [
 
 PLATFORMS = [
     Platform.BINARY_SENSOR,
+    Platform.BUTTON,
     Platform.SENSOR,
 ]
 
