@@ -18,11 +18,6 @@
     }
   },
   "entity": {
-    "button": {
-      "reboot": {
-        "name": "Reboot"
-      }
-    },
     "binary_sensor": {
       "mobile_connected": {
         "name": "Mobile connected"
@@ -32,6 +27,11 @@
       },
       "wire_connected": {
         "name": "Wire connected"
+      }
+    },
+    "button": {
+      "reboot": {
+        "name": "Reboot"
       }
     },
     "sensor": {
